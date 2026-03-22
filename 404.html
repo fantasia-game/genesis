@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Redirecting...</title>
+    <script>
+      (function () {
+        var redirectPath = window.location.pathname + window.location.search + window.location.hash;
+        try {
+          window.sessionStorage.setItem('gh-pages-redirect-path', redirectPath);
+        } catch (error) {
+          // Ignore storage failures and continue redirecting to the app shell.
+        }
+        window.location.replace('/');
+      })();
+    </script>
+    <style>
+      html, body {
+        margin: 0;
+        min-height: 100%;
+        background: #0f1724;
+        color: #dbe6ff;
+        font: 14px/1.4 "Segoe UI", "Microsoft YaHei", sans-serif;
+      }
+      body {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .redirect-note {
+        opacity: 0.78;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="redirect-note">Redirecting...</div>
+  </body>
+</html>
